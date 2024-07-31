@@ -1,0 +1,220 @@
+{
+    "abi": [
+        {
+            "type": "function",
+            "name": "fees",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "join",
+            "inputs": [
+                {
+                    "name": "creator",
+                    "type": "address",
+                    "internalType": "address payable"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "payable"
+        },
+        {
+            "type": "function",
+            "name": "members",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "error",
+            "name": "onlyfans_alreadyAMember",
+            "inputs": [
+                {
+                    "name": "creator",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ]
+        },
+        {
+            "type": "error",
+            "name": "onlyfans_notEnoughFees",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "onlyfans_transactionFailed",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "onlyfans_valueCannotBeZero",
+            "inputs": []
+        }
+    ],
+    "bytecode": {
+        "object": "0x6080604052348015600f57600080fd5b506102b48061001f6000396000f3fe6080604052600436106100345760003560e01c806328ffe6c8146100395780639af1d35a1461004e578063be43e0451461007b575b600080fd5b61004c610047366004610221565b6100c3565b005b34801561005a57600080fd5b50610068655af3107a400081565b6040519081526020015b60405180910390f35b34801561008757600080fd5b506100b3610096366004610245565b600060208181529281526040808220909352908152205460ff1681565b6040519015158152602001610072565b655af3107a40003410156100ea57604051630f2464bf60e41b815260040160405180910390fd5b3460000361010b57604051632600475960e01b815260040160405180910390fd5b6001600160a01b03811660009081526020818152604080832033845290915290205460ff16151560010361016157604051632d969b3960e11b81526001600160a01b038216600482015260240160405180910390fd5b6000816001600160a01b0316655af3107a400060405160006040518083038185875af1925050503d80600081146101b4576040519150601f19603f3d011682016040523d82523d6000602084013e6101b9565b606091505b50509050806101db576040516311a43e3560e21b815260040160405180910390fd5b506001600160a01b03166000908152602081815260408083203384529091529020805460ff19166001179055565b6001600160a01b038116811461021e57600080fd5b50565b60006020828403121561023357600080fd5b813561023e81610209565b9392505050565b6000806040838503121561025857600080fd5b823561026381610209565b9150602083013561027381610209565b80915050925092905056fea26469706673582212209b65f3db2a1bbafd9ba7715b203bcbeb9a1f0835f7c62d66e1360c4a5fa909a164736f6c634300081a0033",
+        "sourceMap": "78:818:23:-:0;;;;;;;;;;;;;;;;;;;",
+        "linkReferences": {}
+    },
+    "deployedBytecode": {
+        "object": "0x6080604052600436106100345760003560e01c806328ffe6c8146100395780639af1d35a1461004e578063be43e0451461007b575b600080fd5b61004c610047366004610221565b6100c3565b005b34801561005a57600080fd5b50610068655af3107a400081565b6040519081526020015b60405180910390f35b34801561008757600080fd5b506100b3610096366004610245565b600060208181529281526040808220909352908152205460ff1681565b6040519015158152602001610072565b655af3107a40003410156100ea57604051630f2464bf60e41b815260040160405180910390fd5b3460000361010b57604051632600475960e01b815260040160405180910390fd5b6001600160a01b03811660009081526020818152604080832033845290915290205460ff16151560010361016157604051632d969b3960e11b81526001600160a01b038216600482015260240160405180910390fd5b6000816001600160a01b0316655af3107a400060405160006040518083038185875af1925050503d80600081146101b4576040519150601f19603f3d011682016040523d82523d6000602084013e6101b9565b606091505b50509050806101db576040516311a43e3560e21b815260040160405180910390fd5b506001600160a01b03166000908152602081815260408083203384529091529020805460ff19166001179055565b6001600160a01b038116811461021e57600080fd5b50565b60006020828403121561023357600080fd5b813561023e81610209565b9392505050565b6000806040838503121561025857600080fd5b823561026381610209565b9150602083013561027381610209565b80915050925092905056fea26469706673582212209b65f3db2a1bbafd9ba7715b203bcbeb9a1f0835f7c62d66e1360c4a5fa909a164736f6c634300081a0033",
+        "sourceMap": "78:818:23:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;374:517;;;;;;:::i;:::-;;:::i;:::-;;101:38;;;;;;;;;;;;127:12;101:38;;;;;572:25:25;;;560:2;545:18;101:38:23;;;;;;;;313:55;;;;;;;;;;-1:-1:-1;313:55:23;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;1182:14:25;;1175:22;1157:41;;1145:2;1130:18;313:55:23;1017:187:25;374:517:23;127:12;443:9;:14;440:74;;;479:24;;-1:-1:-1;;;479:24:23;;;;;;;;;;;440:74;526:9;537:1;526:12;523:76;;560:28;;-1:-1:-1;;;560:28:23;;;;;;;;;;;523:76;-1:-1:-1;;;;;611:16:23;;:7;:16;;;;;;;;;;;628:10;611:28;;;;;;;;;;:34;;:28;:34;608:102;;667:32;;-1:-1:-1;;;667:32:23;;-1:-1:-1;;;;;1381:32:25;;667::23;;;1363:51:25;1336:18;;667:32:23;;;;;;;608:102;720:9;732:7;-1:-1:-1;;;;;732:12:23;127;732:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;719:41;;;776:4;772:69;;802:28;;-1:-1:-1;;;802:28:23;;;;;;;;;;;772:69;-1:-1:-1;;;;;;850:16:23;:7;:16;;;;;;;;;;;867:10;850:28;;;;;;;:33;;-1:-1:-1;;850:33:23;879:4;850:33;;;374:517::o;14:139:25:-;-1:-1:-1;;;;;97:31:25;;87:42;;77:70;;143:1;140;133:12;77:70;14:139;:::o;158:263::-;225:6;278:2;266:9;257:7;253:23;249:32;246:52;;;294:1;291;284:12;246:52;333:9;320:23;352:39;385:5;352:39;:::i;:::-;410:5;158:263;-1:-1:-1;;;158:263:25:o;608:404::-;676:6;684;737:2;725:9;716:7;712:23;708:32;705:52;;;753:1;750;743:12;705:52;792:9;779:23;811:39;844:5;811:39;:::i;:::-;869:5;-1:-1:-1;926:2:25;911:18;;898:32;939:41;898:32;939:41;:::i;:::-;999:7;989:17;;;608:404;;;;;:::o",
+        "linkReferences": {}
+    },
+    "methodIdentifiers": {
+        "fees()": "9af1d35a",
+        "join(address)": "28ffe6c8",
+        "members(address,address)": "be43e045"
+    },
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.26+commit.8a97fa7a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"creator\",\"type\":\"address\"}],\"name\":\"onlyfans_alreadyAMember\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"onlyfans_notEnoughFees\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"onlyfans_transactionFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"onlyfans_valueCannotBeZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"fees\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"creator\",\"type\":\"address\"}],\"name\":\"join\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"members\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/onlyfans.sol\":\"onlyfans\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/onlyfans.sol\":{\"keccak256\":\"0xf25d5c542e97f9996b3b2e3943414cbd1e805e7535cfe73f54fb95834083142c\",\"license\":\"SEE LICENSE IN LICENSE\",\"urls\":[\"bzz-raw://f6bd59c60a2e62895bd0752a11b2199ef24fa83272a378ac8b306741ddb9c5e7\",\"dweb:/ipfs/QmRu4DwjUY7zu6diVZr819DFNKUQLHdWuoiy4nEqacu7Bu\"]}},\"version\":1}",
+    "metadata": {
+        "compiler": {
+            "version": "0.8.26+commit.8a97fa7a"
+        },
+        "language": "Solidity",
+        "output": {
+            "abi": [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "creator",
+                            "type": "address"
+                        }
+                    ],
+                    "type": "error",
+                    "name": "onlyfans_alreadyAMember"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "onlyfans_notEnoughFees"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "onlyfans_transactionFailed"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "onlyfans_valueCannotBeZero"
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "fees",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address payable",
+                            "name": "creator",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "payable",
+                    "type": "function",
+                    "name": "join"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "members",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                }
+            ],
+            "devdoc": {
+                "kind": "dev",
+                "methods": {},
+                "version": 1
+            },
+            "userdoc": {
+                "kind": "user",
+                "methods": {},
+                "version": 1
+            }
+        },
+        "settings": {
+            "remappings": [
+                "forge-std/=lib/forge-std/src/"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200
+            },
+            "metadata": {
+                "bytecodeHash": "ipfs"
+            },
+            "compilationTarget": {
+                "src/onlyfans.sol": "onlyfans"
+            },
+            "evmVersion": "paris",
+            "libraries": {}
+        },
+        "sources": {
+            "src/onlyfans.sol": {
+                "keccak256": "0xf25d5c542e97f9996b3b2e3943414cbd1e805e7535cfe73f54fb95834083142c",
+                "urls": [
+                    "bzz-raw://f6bd59c60a2e62895bd0752a11b2199ef24fa83272a378ac8b306741ddb9c5e7",
+                    "dweb:/ipfs/QmRu4DwjUY7zu6diVZr819DFNKUQLHdWuoiy4nEqacu7Bu"
+                ],
+                "license": "SEE LICENSE IN LICENSE"
+            }
+        },
+        "version": 1
+    },
+    "id": 23
+}

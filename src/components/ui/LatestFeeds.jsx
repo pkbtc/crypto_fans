@@ -9,7 +9,7 @@ export default function LatestFeeds() {
   let creators=getCreatos();  
   creators=Object.values(creators);
   return (
-    <div className="flex flex-col items-center">
+    <div className="w-full flex flex-col items-center">
       {
         creators.map((creator) => (
       <Feed key={creator.address} link={`/creators/${creator.address}`} avatar="logo.jpeg" username={creator.name} fullName={creator.name} paragraph="nice bath" image="/test.jpeg" />

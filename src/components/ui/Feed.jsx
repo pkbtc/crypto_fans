@@ -6,7 +6,7 @@ export default function Feed(
   { key, link, avatar, fullName, username, paragraph, image },
 ) {
   return (
-    <div className="w-1/3 h-1/2 p-4">
+    <div className="p-4">
       <div className="flex">
         <Link href={link}>
           <Avatar>

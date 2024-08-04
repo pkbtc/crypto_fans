@@ -28,7 +28,9 @@ export default function Creator({ params }) {
   const [creator, setCreator] = useState(null);
   const [signature, setSignature] = useState(null);
   const [signer, setSigner] = useState(null);
-  const [contract, setContract] = useState(null);
+  const [feedback, setFeedBack] = useState("");
+  const [cAddress, setCAddress] = useState(null);
+
   const [isMember, setIsMember] = useState(undefined);
   const message = "welcome to the site";
   useEffect(() => {
@@ -42,7 +44,11 @@ export default function Creator({ params }) {
     if (window.ethereum) {
       try {
         const provider = new ethers.BrowserProvider(window.ethereum);
-        const signer = await provider.getSigner(); setSigner(signer); const sign = await signer.signMessage(message); setSignature(sign); const contractAddress = "0x5D17cA9BeC1ae2271aD57148A405CaC729c1e78b";
+        const signer = await provider.getSigner();
+        setSigner(signer);
+        const sign = await signer.signMessage(message);
+        setSignature(sign);
+        const contractAddress = "0x5D17cA9BeC1ae2271aD57148A405CaC729c1e78b";
         setCAddress(contractAddress);
         const contract = new ethers.Contract(contractAddress, abi, signer);
         console.log(contract);
@@ -127,6 +133,11 @@ export default function Creator({ params }) {
           </div>
         )
         : null}
+      {signature
+        ? (
+          null
+        )
+        : <button onClick={connect}>Connect</button>}
       {signature
         ? (
           null

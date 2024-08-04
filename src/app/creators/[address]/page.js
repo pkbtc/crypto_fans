@@ -125,24 +125,19 @@ export default function Creator({ params }) {
               <div>
                 <h1>Subscription</h1>
                 <p>Subscribe to my onlyfans to get access to my post.</p>
-                <Button asChild>
-                  <Link href="/subscribe/{creator.address}">Subscribe</Link>
+                {signature
+                ? (
+                null
+                ) : (
+                <Button onClick={connect}>
+                  Subscribe
                 </Button>
+                )}
               </div>
             </div>
           </div>
         )
         : null}
-      {signature
-        ? (
-          null
-        )
-        : <button onClick={connect}>Connect</button>}
-      {signature
-        ? (
-          null
-        )
-        : <button onClick={connect}>Connect</button>}
       {signature && !isMember
         ? (
           <div>

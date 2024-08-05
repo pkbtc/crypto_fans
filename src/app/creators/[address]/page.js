@@ -156,6 +156,9 @@ export default function Creator({ params }) {
       {feedback
         ? <div className="alert alert-primary mt-4">{feedback}</div>
         : null}
+        {
+          isMember ? (<div>you are a member you can view my private show</div> ): null
+        }
     </>
   );
 }

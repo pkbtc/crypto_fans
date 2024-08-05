@@ -10,7 +10,7 @@ export default function Feed(
       <div className="flex">
         <Link href={link}>
           <Avatar>
-            <AvatarImage src="/logo.png" alt="@logo" />
+            <AvatarImage src={`/images/${avatar}`} alt="@logo" />
             <AvatarFallback>BF</AvatarFallback>
           </Avatar>
         </Link>

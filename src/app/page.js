@@ -29,7 +29,10 @@ export default function Home() {
         <div>
           <button>All</button>
         </div>
+        <div>
+
         <LatestFeeds />
+        </div>
       </div>
       <div>
         <input type="text" id="search" placeholder="Search Posts" />

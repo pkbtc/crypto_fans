@@ -102,37 +102,53 @@ export default function Creator({ params }) {
                     width={1920}
                   />
                 </div>
+              </div>
+              <div className="px-16">
                 <div className="flex relative">
-                  <div className="flex-grow relative bottom-[4rem] left-5">
+                  <div className="flex-grow relative bottom-[4rem]">
                     <Avatar className="size-44 border border-b-white">
                       <AvatarImage src="https://github.com/shadcn.png" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                   </div>
-                  <CiStar />
-                  <CiShare1 />
+                  <div className="flex text-4xl m-4">
+                    <Link href="#" className="mx-4">
+                      <CiStar />
+                    </Link>
+                    <Link href="#">
+                      <CiShare1 />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-              <div className="mt-[-3rem]">
-                <h1 className="font-bold text-2xl">{creator.name}</h1>
-                <p className="font-semibold text-gray-400 text-md">
-                  {creator.address} <span>Last seen 24hrs ago</span>
-                </p>
-              </div>
-              <main>
-                <p>{creator.description}</p>
-              </main>
-              <div>
-                <h1>Subscription</h1>
-                <p>Subscribe to my onlyfans to get access to my post.</p>
-                {signature
-                ? (
-                null
-                ) : (
-                <Button onClick={connect}>
-                  Subscribe
-                </Button>
-                )}
+                <div className="mt-[-3rem]">
+                  <h1 className="font-bold text-2xl">{creator.name}</h1>
+                  <p className="font-semibold text-gray-400 text-md">
+                    {creator.address}
+                  </p>
+                  <p className="font-semibold text-gray-400 text-sm">
+                    Last seen 24hrs ago
+                  </p>
+                </div>
+                <main className="mt-4 mb-4">
+                  <p className="text-xl">{creator.description}</p>
+                </main>
+                <div className="border border-gray-400 w-full p-6">
+                  <h1 className="font-semibold text-gray-800 text-xl mb-4">
+                    Subscription
+                  </h1>
+                  {signature
+                    ? (
+                      null
+                    )
+                    : (
+                      <Button
+                        className="w-full text-xl rounded-2xl h-12"
+                        onClick={connect}
+                      >
+                        Subscribe
+                      </Button>
+                    )}
+                </div>
               </div>
             </div>
           </div>
@@ -141,7 +157,7 @@ export default function Creator({ params }) {
       {signature && !isMember
         ? (
           <div>
-            <h2>become paid member and get exclusive content</h2>
+            <h2>Become a paid member and get exclusive content</h2>
             <p>with single payment you will get lifetime access</p>
             <button
               type="submit"

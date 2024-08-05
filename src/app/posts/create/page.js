@@ -1,11 +1,10 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import LatestFeeds from "@/components/ui/LatestFeeds";
+import CardSuggest from "@/components/ui/CardSuggest";
 import NavBar from "@/components/NavBar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import HomeBox from "@/components/HomeBox"
-import ComposeNewPost from "@/components/ComposeNewPost"
-import Suggestions from "@/components/ui/Suggestions"
 
 export default function Home() {
   return (
@@ -22,14 +21,17 @@ export default function Home() {
       </div>
       <div className="mx-10 flex flex-col items-center border-gray-300 border-l border-r">
         <HomeBox/>
-        <ComposeNewPost/>
+        <div>
+          <button>All</button>
+        </div>
         <div>
 
         <LatestFeeds />
         </div>
       </div>
       <div>
-        <Suggestions/>
+        <input type="text" id="search" placeholder="Search Posts" />
+        <CardSuggest />
       </div>
     </div>
   );

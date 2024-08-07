@@ -23,6 +23,20 @@ const getCreator = async (address) => {
 
   // For testing purpose, returning a mock object
 };
+const getPrivatePosts=async(creator,user,signature)=>{
+ let res = await fetch(
+    `/api/posts/${creator}`,
+    {
+      headers: {
+        Accept: "application/json",
+        OF_CRYPTO_SIG:signature,
+        OF_CRYPTO_ADDRESS:user
+      },
+    },
+  );
+  res = await res.json();
+  return res.data;
+}
 
 export default function Creator({ params }) {
   const [creator, setCreator] = useState(null);
@@ -30,8 +44,8 @@ export default function Creator({ params }) {
   const [signer, setSigner] = useState(null);
   const [feedback, setFeedBack] = useState("");
   const [cAddress, setCAddress] = useState(null);
-
   const [isMember, setIsMember] = useState(undefined);
+  const [privatePosts, setPrivatePosts] = useState([]);
   const message = "welcome to the site";
   useEffect(() => {
     const init = async () => {
@@ -40,6 +54,19 @@ export default function Creator({ params }) {
     };
     init();
   }, []);
+  // useEffect(() => {
+   
+  //   if(signature && isMember){
+  //     init();
+  //   }
+    
+  // }, [signature,isMember]);
+   const init = async () => {
+      const privateP = await getPrivatePosts(creator.address,signer.address,signature);
+      const allPosts = privateP
+      setPrivatePosts(allPosts);
+      console.log(privatePosts);
+    };
   const connect = async () => {
     if (window.ethereum) {
       try {
@@ -173,7 +200,23 @@ export default function Creator({ params }) {
         ? <div className="alert alert-primary mt-4">{feedback}</div>
         : null}
         {
-          isMember ? (<div>you are a member you can view my private show</div> ): null
+          isMember ? (<div><div>you are a member you can view my private show</div> 
+          <button onClick={init}>Get Private Posts</button>
+          </div>
+
+          ): null
+        }
+        {
+          privatePosts ? (
+              <div>
+                {
+                  privatePosts.map((post)=>{
+                    <div>{post.content}
+                    </div>
+                  })
+                }
+              </div>
+          ):null
         }
     </>
   );

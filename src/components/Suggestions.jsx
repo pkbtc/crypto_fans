@@ -1,4 +1,4 @@
-import CardSuggest from "@/components/ui/CardSuggest";
+import CardSuggest from "@/components/CardSuggest";
 import { Input } from "@/components/ui/input";
 import { IoPricetagOutline } from "react-icons/io5";
 import { FiRefreshCcw } from "react-icons/fi";
@@ -14,7 +14,7 @@ export default function Suggestions() {
   let creators = getCreatos();
   creators = Object.values(creators);
   return (
-    <div>
+    <div className="fixed">
       <div>
         <Input
           className="my-4 h-12 rounded-2xl"
@@ -33,7 +33,7 @@ export default function Suggestions() {
             <MdKeyboardArrowRight />
           </span>
         </div>
-        {creators.map((creator) => (
+        {creators.slice(0, 3).map((creator) => (
           <CardSuggest
             profilePic={`/images/${creator.profilePic}`}
             name={creator.name}

@@ -1,4 +1,4 @@
-import Feed from "@/components/ui/Feed";
+import Feed from "@/components/Feed";
 const fs = require("fs");
 const getCreatos=()=>{
  const creators= fs.readFileSync('./src/app/creators.json','utf-8');

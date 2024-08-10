@@ -8,6 +8,7 @@ import { CiStar } from "react-icons/ci";
 import { CiShare1 } from "react-icons/ci";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import NotFound from "@/components/smallComponents/NotFound";
 
 const getCreator = async (address) => {
   let res = await fetch(
@@ -23,20 +24,20 @@ const getCreator = async (address) => {
 
   // For testing purpose, returning a mock object
 };
-const getPrivatePosts=async(creator,user,signature)=>{
- let res = await fetch(
+const getPrivatePosts = async (creator, user, signature) => {
+  let res = await fetch(
     `/api/posts/${creator}`,
     {
       headers: {
         Accept: "application/json",
-        OF_CRYPTO_SIG:signature,
-        OF_CRYPTO_ADDRESS:user
+        OF_CRYPTO_SIG: signature,
+        OF_CRYPTO_ADDRESS: user,
       },
     },
   );
   res = await res.json();
   return res.data;
-}
+};
 
 export default function Creator({ params }) {
   const [creator, setCreator] = useState(null);
@@ -55,18 +56,22 @@ export default function Creator({ params }) {
     init();
   }, []);
   // useEffect(() => {
-   
+
   //   if(signature && isMember){
   //     init();
   //   }
-    
+
   // }, [signature,isMember]);
-   const init = async () => {
-      const privateP = await getPrivatePosts(creator.address,signer.address,signature);
-      const allPosts = privateP
-      setPrivatePosts(allPosts);
-      console.log(privatePosts);
-    };
+  const init = async () => {
+    const privateP = await getPrivatePosts(
+      creator.address,
+      signer.address,
+      signature,
+    );
+    const allPosts = privateP;
+    setPrivatePosts(allPosts);
+    console.log(privatePosts);
+  };
   const connect = async () => {
     if (window.ethereum) {
       try {
@@ -113,8 +118,8 @@ export default function Creator({ params }) {
     <>
       {creator
         ? (
-          <div className="w-screen">
-            <div className="flex flex-col px-40">
+          <div className="w-full">
+            <div className="flex flex-col">
               <div>
                 <div className="w-full h-[400px]">
                   <Image
@@ -134,7 +139,7 @@ export default function Creator({ params }) {
                 <div className="flex relative">
                   <div className="flex-grow relative bottom-[4rem]">
                     <Avatar className="size-44 border border-b-white">
-                      <AvatarImage src="https://github.com/shadcn.png" />
+                      <AvatarImage src="/pfp1.jpg" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                   </div>
@@ -172,52 +177,50 @@ export default function Creator({ params }) {
                         className="w-full text-xl rounded-2xl h-12"
                         onClick={connect}
                       >
-                        Subscribe
+                        Connect Wallet
                       </Button>
                     )}
+
+                  {signature && !isMember
+                    ? (
+                      <div>
+                        <h2>Become a paid member and get exclusive content</h2>
+                        <p>with single payment you will get lifetime access</p>
+                        <Button
+                          className="w-full text-xl rounded-2xl h-12"
+                          onClick={join}
+                        >
+                          Subscribe
+                        </Button>
+                      </div>
+                    )
+                    : null}
+                  {feedback
+                    ? <div className="alert alert-primary mt-4">{feedback}</div>
+                    : null}
+                  {isMember
+                    ? (
+                      <div>
+                        <div>you are a member you can view my private show</div>
+                        <button onClick={init}>Get Private Posts</button>
+                      </div>
+                    )
+                    : null}
+                  {privatePosts
+                    ? (
+                      <div>
+                        {privatePosts.map((post) => {
+                          <div>{post.content}</div>;
+                        })}
+                      </div>
+                    )
+                    : null}
                 </div>
               </div>
             </div>
           </div>
         )
-        : null}
-      {signature && !isMember
-        ? (
-          <div>
-            <h2>Become a paid member and get exclusive content</h2>
-            <p>with single payment you will get lifetime access</p>
-            <button
-              type="submit"
-              className="btn btn-primary mt-4"
-              onClick={join}
-            >
-              Join
-            </button>
-          </div>
-        )
-        : null}
-      {feedback
-        ? <div className="alert alert-primary mt-4">{feedback}</div>
-        : null}
-        {
-          isMember ? (<div><div>you are a member you can view my private show</div> 
-          <button onClick={init}>Get Private Posts</button>
-          </div>
-
-          ): null
-        }
-        {
-          privatePosts ? (
-              <div>
-                {
-                  privatePosts.map((post)=>{
-                    <div>{post.content}
-                    </div>
-                  })
-                }
-              </div>
-          ):null
-        }
+        : <NotFound />}
     </>
   );
 }

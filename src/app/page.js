@@ -8,9 +8,7 @@ export default function Home() {
     <>
       <HomeBox />
       <ComposeNewPost />
-      <div>
-        <LatestFeeds />
-      </div>
+      <LatestFeeds />
     </>
   );
 }

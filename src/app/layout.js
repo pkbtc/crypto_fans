@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Suggestions from "@/components/Suggestions";
-import NavBar from "@/components/NavBar"
+import NavBar from "@/components/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,14 +14,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="h-screen grid grid-cols-4 w-screen px-10">
-          <div className="max-h-screen p-8 hidden md:block lg:block">
-            <NavBar/>
+        <div className="h-screen grid grid-cols-10 gap-7 px-10">
+          <div className="p-8 col-span-3 hidden lg:block">
+            <div className="flex justify-end">
+              <NavBar />
+            </div>
           </div>
-          <div className="col-span-full md:col-span-2 mx-10 flex flex-col items-center border-gray-300 border-l border-r">
+          <div className="col-span-full md:col-span-6 lg:col-span-4 flex flex-col border-gray-300 border-l border-r">
             {children}
           </div>
-          <div className="hidden md:block lg:block">
+          <div className="col-span-4 md:col-span-3 hidden md:block w-full">
             <Suggestions />
           </div>
         </div>

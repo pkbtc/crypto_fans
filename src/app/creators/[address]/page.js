@@ -1,4 +1,5 @@
 "use client";
+import * as React from "react";
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import abi from "./abi.json";
@@ -9,6 +10,10 @@ import { CiShare1 } from "react-icons/ci";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import NotFound from "@/components/smallComponents/NotFound";
+import { Progress } from "@/components/ui/progress";
+
+export function ProgressDemo() {
+}
 
 const getCreator = async (address) => {
   let res = await fetch(
@@ -113,6 +118,13 @@ export default function Creator({ params }) {
       console.log(error);
     }
   };
+
+  const [progress, setProgress] = React.useState(13);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setProgress(66), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -220,7 +232,11 @@ export default function Creator({ params }) {
             </div>
           </div>
         )
-        : <NotFound />}
+        : (
+          <div className="h-screen w-full flex items-center justify-center">
+            <Progress value={progress} className="w-[60%]" />
+          </div>
+        )}
     </>
   );
 }

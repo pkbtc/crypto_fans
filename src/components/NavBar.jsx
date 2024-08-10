@@ -4,48 +4,55 @@ import { IoNotifications } from "react-icons/io5";
 import { AiOutlineMessage } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { CiCircleMore } from "react-icons/ci";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import AvatarMD from "@/components/smallComponents/AvatarMD";
 
-export default function NavBar({ className }) {
+export default function NavBar() {
+  const user = {
+    profilePic: "pfp1.jpg",
+  };
   return (
     <div className="flex justify-end fixed">
-      <div className={`flex flex-col ${className}`}>
-        <Avatar className="mb-4">
-          <AvatarImage src="/pfp1.jpg" />
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
-        <nav className="h-full flex-grow">
-          <ul className="flex flex-col gap-8 text-2xl">
-            <li className="hover:text-black text-gray-400">
-              <Link href="/">
-                <FaHome className="inline" /> Home
-              </Link>
-            </li>
-            <li className="hover:text-black text-gray-400">
-              <Link href="#">
-                <IoNotifications className="inline" /> Notifications
-              </Link>
-            </li>
-            <li className="hover:text-black text-gray-400">
-              <Link href="#">
-                <AiOutlineMessage className="inline" /> Messages
-              </Link>
-            </li>
-            <li className="hover:text-black text-gray-400">
-              <Link href="#">
-                <CgProfile className="inline" /> My Profile
-              </Link>
-            </li>
-            <li className="hover:text-black text-gray-400">
-              <Link href="#">
-                <CiCircleMore className="inline" /> More
-              </Link>
-            </li>
-          </ul>
-        </nav>
+      <div>
+        <div className="flex flex-col gap-4 pr-14">
+          <AvatarMD className="size-8" src={user.profilePic} NAME="BR" />
+          <nav className="h-full flex-grow">
+            <ul className="flex flex-col gap-8 text-xl">
+              <li className="hover:text-black text-gray-400">
+                <Link href="/" className="flex items-center gap-4">
+                  <FaHome className="inline text-4xl" />
+                  <h1>Home</h1>
+                </Link>
+              </li>
+              <li className="hover:text-black text-gray-400">
+                <Link href="/notification" className="flex items-center gap-4">
+                  <IoNotifications className="inline text-4xl" />
+                  <h1>Notifications</h1>
+                </Link>
+              </li>
+              <li className="hover:text-black text-gray-400">
+                <Link href="/message" className="flex items-center gap-4">
+                  <AiOutlineMessage className="inline text-4xl" />
+                  <h1>Messages</h1>
+                </Link>
+              </li>
+              <li className="hover:text-black text-gray-400">
+                <Link href="/creator/{user}" className="flex items-center gap-4">
+                  <CgProfile className="inline text-4xl" />
+                  <h1>My Profile</h1>
+                </Link>
+              </li>
+              <li className="hover:text-black text-gray-400">
+                <Link href="#" className="flex items-center gap-4">
+                  <CiCircleMore className="inline text-4xl" />
+                  <h1>More</h1>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
         <Button asChild>
-          <Link className="rounded-full mt-8" href="/posts/create">
+          <Link className="rounded-full w-full mt-8" href="/posts/create">
             New Post
           </Link>
         </Button>

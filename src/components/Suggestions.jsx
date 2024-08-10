@@ -14,7 +14,7 @@ export default function Suggestions() {
   let creators = getCreatos();
   creators = Object.values(creators);
   return (
-    <div className="fixed">
+    <div className="fixed min-w-[368px] max-h-[128px]">
       <div>
         <Input
           className="my-4 h-12 rounded-2xl"
@@ -35,7 +35,7 @@ export default function Suggestions() {
         </div>
         {creators.slice(0, 3).map((creator) => (
           <CardSuggest
-            profilePic={`/images/${creator.profilePic}`}
+            profilePic={`${creator.profilePic}`}
             name={creator.name}
             profileBanner={`/images/${creator.bannerPic}`}
           />

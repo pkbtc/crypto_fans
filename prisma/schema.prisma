@@ -36,8 +36,8 @@ model Image{
   
 
 }
-model Auth{
-  id String @id @default(cuid())
-  email String 
+model Sign{
+  id String @id @default(cuid()) @map("_id")
+  email String
   password String
 }

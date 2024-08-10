@@ -1,6 +1,6 @@
-import LoginBox from "@/components/ui/loginPage";
-import Banner from "@/components/ui/Banner";
-import LatestFeeds from "@/components/ui/LatestFeeds";
+import LoginBox from "@/components/loginPage";
+import Banner from "@/components/Banner";
+import LatestFeeds from "@/components/LatestFeeds";
 
 export default function Login() {
   return (

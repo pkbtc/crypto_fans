@@ -1,11 +1,11 @@
 import React from 'react'
-import UplaodImage from '@/components/ui/UplaodImage'
+import UplaodImage from '@/components/UplaodImage'
 
 const page = () => {
   return (
-    <div>
+    <>
       <UplaodImage />
-    </div>
+    </>
   )
 }
 

@@ -1,7 +1,5 @@
 import * as React from "react";
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function CardWithForm({ profilePic, profileBanner, name }) {

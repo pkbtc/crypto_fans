@@ -1,9 +1,21 @@
-import Link from "next/link";
 
-export default function loginBox() {
+//import { useState } from "react";
+import Link from "next/link";
+import { loginUser } from "@/app/actions/login";
+import bcrypt from "bcryptjs";
+import prisma from "@/lib/db";
+export default async function loginBox() {
+  const user=await prisma.sign.findMany();
+  console.log(user);
+  const handleLogin=async(e)=>{
+      e.preventDefault();
+
+     
+  }
   return (
+    <>
     <div>
-      <form className="flex flex-col p-4 gap-2">
+      <form  className="flex flex-col p-4 gap-2">
         <label>Log in</label>
         <input
           className="border border-gray-300 rounded-lg text-lg p-2"
@@ -11,15 +23,17 @@ export default function loginBox() {
           id="email"
           name="email"
           placeholder="Email"
+         // onChange={(e)=>setEmail(e.target.value)}
         />
         <input
           className="border border-gray-300 rounded-lg  text-lg  p-2"
-          type="text"
+          type="password"
           id="password"
           name="password"
           placeholder="Password"
+       //   onChange={(e)=>setPassoword(e.target.value)}
         />
-        <button className="rounded-2xl text-center bg-gray-200 p-1 text-sm">
+        <button  type="submit" className="rounded-2xl text-center bg-gray-200 p-1 text-sm">
           LOG IN
         </button>
       </form>
@@ -33,5 +47,6 @@ export default function loginBox() {
         <button>PASSWORDLESS SIGN IN</button>
       </div>
     </div>
+    </>
   );
 }

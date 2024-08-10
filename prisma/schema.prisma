@@ -24,9 +24,15 @@ model Post {
   public      Boolean  @default(false)
   title       String
   description String
-  image       String
   updatedAt   DateTime @updatedAt
   createdAt   DateTime @default(now())
   User        User?    @relation(fields: [userId], references: [id])
   userId      String?
+}
+model Image{
+  id String @id @map("_id")
+  imageTitle String
+  imageUrl String
+  imageKey String
+
 }

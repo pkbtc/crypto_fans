@@ -1,4 +1,4 @@
-import LoginBox from "@/components/loginPage";
+import LoginBox from "@/components/LoginPage";
 import Banner from "@/components/Banner";
 import LatestFeeds from "@/components/LatestFeeds";
 

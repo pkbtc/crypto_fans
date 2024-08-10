@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Feed(
-  { key, link, avatar, fullName, paragraph, image },
+  { link, avatar, fullName, paragraph, image },
 ) {
   return (
     <div className="p-4">
@@ -15,7 +15,6 @@ export default function Feed(
           </Avatar>
           <div className="flex-grow">
             <h1>{fullName}</h1>
-            <p>{key}</p>
           </div>
           <div>5 hours ago</div>
         </Link>

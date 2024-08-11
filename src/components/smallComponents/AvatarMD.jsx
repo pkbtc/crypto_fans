@@ -5,7 +5,7 @@ export default function AvatarMD({ className, src, NAME }) {
     <Avatar className={className}>
       <AvatarImage
         className="w-full object-cover object-center"
-        src={`/images/${src}`}
+        src={src}
         alt="@logo"
       />
       <AvatarFallback>{NAME}</AvatarFallback>

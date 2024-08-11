@@ -7,15 +7,18 @@ import { CiCircleMore } from "react-icons/ci";
 import { Button } from "@/components/ui/button";
 import AvatarMD from "@/components/smallComponents/AvatarMD";
 
-export default function NavBar() {
+export default function NavBar({ }) {
   const user = {
+    link: `/creators/0xabc`,
     profilePic: "pfp1.jpg",
   };
   return (
     <div className="flex justify-end fixed">
       <div>
         <div className="flex flex-col gap-4 pr-14">
-          <AvatarMD className="size-8" src={user.profilePic} NAME="BR" />
+          <Link className="flex w-full" href={user.link}>
+            <AvatarMD className="size-8" src={user.profilePic} NAME="BR" />
+          </Link>
           <nav className="h-full flex-grow">
             <ul className="flex flex-col gap-8 text-xl">
               <li className="hover:text-black text-gray-400">
@@ -37,7 +40,10 @@ export default function NavBar() {
                 </Link>
               </li>
               <li className="hover:text-black text-gray-400">
-                <Link href="/creator/{user}" className="flex items-center gap-4">
+                <Link
+                  href="/creator/{user}"
+                  className="flex items-center gap-4"
+                >
                   <CgProfile className="inline text-4xl" />
                   <h1>My Profile</h1>
                 </Link>

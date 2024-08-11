@@ -1,15 +1,11 @@
 import Link from "next/link";
+import PopUp from "@/components/smallComponents/PopUp"
 import UploadImage from "@/components/UploadImage"
 import { CiImageOn } from "react-icons/ci";
 import { BiPoll } from "react-icons/bi";
 import { GoQuestion } from "react-icons/go";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 
 export default function NewPost() {
   return (
@@ -20,12 +16,7 @@ export default function NewPost() {
       />
       <div className="flex">
         <div className="flex-grow flex text-2xl gap-2">
-          <Popover>
-            <PopoverTrigger>
-              <CiImageOn />
-            </PopoverTrigger>
-            <PopoverContent><UploadImage/></PopoverContent>
-          </Popover>
+          <PopUp trigger={<CiImageOn/>} content={<UploadImage/>}/>
           <Link href="#">
             <BiPoll />
           </Link>

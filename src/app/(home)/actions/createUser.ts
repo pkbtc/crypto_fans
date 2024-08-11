@@ -12,7 +12,6 @@ export async function createUser(){
     const bannner="";
     await prisma.user.create({
         data:{
-            
             address:address,
             name:name,
             profilePic:url,

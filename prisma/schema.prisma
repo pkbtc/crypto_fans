@@ -33,13 +33,13 @@ model Post {
 
 model ProfileImage {
   id       String @id @default(cuid()) @map("_id")
-  imageUrl String
+  imageUrl String @default("pfp1.jpg")
 }
 
 model PostImage {
   id         String  @id @default(cuid()) @map("_id")
   imageTitle String
-  imageUrl   String
+  imageUrl   String  @default("banner1.jpg")
   imageKey   String
   Post       Post?   @relation(fields: [postId], references: [id])
   postId     String?

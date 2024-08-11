@@ -21,7 +21,7 @@ export default async function LatestFeeds() {
             key={post.id} // Use post.id as the unique key
             address={creator.address}
             link={`/creators/${creator.address}`}
-            avatar={creator.profilePic}
+            avatar={`/images/${creator.profilePic}`}
             username={creator.address}
             fullName={creator.name}
             paragraph={post.description}

@@ -14,30 +14,39 @@ model User {
   id         String @id @default(cuid())
   address    String @unique
   name       String
+  profilePic String
   bannerPic  String
   posts      Post[]
 }
 
 model Post {
-  id          String   @id @default(cuid())
-  public      Boolean  @default(false)
+  id          String      @id @default(cuid())
+  public      Boolean     @default(false)
   title       String
   description String
-  updatedAt   DateTime @updatedAt
-  createdAt   DateTime @default(now())
-  User        User?    @relation(fields: [userId], references: [id])
+  image       PostImage[]
+  updatedAt   DateTime    @updatedAt
+  createdAt   DateTime    @default(now())
+  User        User?       @relation(fields: [userId], references: [id])
   userId      String?
 }
-model Image{
-  id String @id @default(cuid()) @map("_id")
-  imageTitle String
-  imageUrl String
-  imageKey String
-  
 
+model ProfileImage {
+  id       String @id @default(cuid()) @map("_id")
+  imageUrl String
 }
-model Sign{
-  id String @id @default(cuid()) @map("_id")
-  email String
+
+model PostImage {
+  id         String  @id @default(cuid()) @map("_id")
+  imageTitle String
+  imageUrl   String
+  imageKey   String
+  Post       Post?   @relation(fields: [postId], references: [id])
+  postId     String?
+}
+
+model Sign {
+  id       String @id @default(cuid()) @map("_id")
+  email    String
   password String
 }

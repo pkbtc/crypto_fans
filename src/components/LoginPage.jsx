@@ -5,10 +5,21 @@ import { loginUser } from "@/app/actions/login";
 import bcrypt from "bcryptjs";
 import prisma from "@/lib/db";
 export default async function loginBox() {
-  const user=await prisma.sign.findMany();
-  console.log(user);
+  // const user=await prisma.sign.findUnique({
+  //   where:{
+  //     email
+  //   }
+  // });
+  // console.log(user);
   const handleLogin=async(e)=>{
       e.preventDefault();
+      const email = e.target.email.value;  // Directly accessing the input value from the form
+    const password = e.target.password.value;
+      const user=await prisma.sign.findUnique({
+        where:{
+          email:email
+        }
+      });
 
      
   }

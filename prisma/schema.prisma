@@ -12,7 +12,7 @@ datasource db {
 
 model User {
   id         String @id @default(cuid())
-  address    String @unique
+  address    String 
   name       String
   profilePic String
   bannerPic  String

@@ -9,7 +9,6 @@ import { CiStar } from "react-icons/ci";
 import { CiShare1 } from "react-icons/ci";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import NotFound from "@/components/smallComponents/NotFound";
 import { Progress } from "@/components/ui/progress";
 
 export function ProgressDemo() {

@@ -2,8 +2,8 @@
 import { UploadButton, UploadDropzone } from '@/utils/uploadthing';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import { imageRemove } from '@/app/actions/imageRemove';
-import { createImageData } from '@/app/actions/imageDataSave';
+import { imageRemove } from '@/app/(home)/actions/imageRemove';
+import { createImageData } from '@/app/(home)/actions/imageDataSave';
 const UploadImage = () => {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [imageKey, setImageKey] = useState<string | null>(null);

@@ -1,5 +1,5 @@
 "use server"
-import {utapi} from "@/app/server/uploadthing";
+import {utapi} from "@/app/(home)/server/uploadthing";
 export async function imageRemove(imageKey){
     try {
         await utapi.deleteFiles(imageKey);

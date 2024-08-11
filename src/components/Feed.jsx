@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import AvatarMD from "@/components/smallComponents/AvatarMD";
+import prisma from "@/lib/db"
 
 export default function Feed(
   { address, link, avatar, fullName, paragraph, image },

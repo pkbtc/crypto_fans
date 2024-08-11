@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Suggestions from "@/components/Suggestions";
 import NavBar from "@/components/NavBar";
+import { ClerkProvider } from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,6 +13,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body className={inter.className}>
         <div className="h-screen grid grid-cols-10 gap-7 px-10">
@@ -29,5 +31,6 @@ export default function RootLayout({ children }) {
         </div>
       </body>
     </html>
+    </ClerkProvider>
   );
 }

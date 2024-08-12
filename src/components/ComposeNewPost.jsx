@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import PopUp from "@/components/smallComponents/PopUp"
 import UploadImage from "@/components/UploadImage"
@@ -6,7 +7,8 @@ import { BiPoll } from "react-icons/bi";
 import { GoQuestion } from "react-icons/go";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-
+import { createpost } from "@/app/(home)/actions/ceatePost";
+import { newPost } from "@/app/(home)/method/createPost";
 export default function NewPost() {
   return (
     <div className="w-full border-t border-b border-gray-300">
@@ -25,7 +27,7 @@ export default function NewPost() {
           </Link>
         </div>
         <div>
-          <Button>
+          <Button  >
             New Post
           </Button>
         </div>
